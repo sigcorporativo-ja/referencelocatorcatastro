@@ -769,14 +769,14 @@ export default class ReferenceLocatorCatastroControl extends M.Control {
       let resultHtml;
       for (let i = 0, ilen = resultsHtmlElements.length; i < ilen; i += 1) {
         resultHtml = resultsHtmlElements.item(i);
-        resultHtml.removeEventListener('click', this.resultClick_);
+        resultHtml.removeEventListener('click', this.resultClick_.bind(this));
       }
 
       this.zoomToResults();
 
       const btnResults = container.querySelector('div.page > div.g-cartografia-flecha-arriba');
       if (!M.utils.isNullOrEmpty(btnResults)) {
-        btnResults.removeEventListener('click', this.resultsClick_);
+        btnResults.removeEventListener('click', this.resultsClick_.bind(this));
       }
 
       // gets the new results scroll
@@ -788,7 +788,7 @@ export default class ReferenceLocatorCatastroControl extends M.Control {
       resultsHtmlElements = container.getElementsByClassName('result');
       for (let i = 0, ilen = resultsHtmlElements.length; i < ilen; i += 1) {
         resultHtml = resultsHtmlElements.item(i);
-        resultHtml.addEventListener('click', this.resultClick_);
+        resultHtml.addEventListener('click', this.resultClick_.bind(this));
       }
       this.fire(M.evt.COMPLETED);
     });
@@ -1190,7 +1190,7 @@ export default class ReferenceLocatorCatastroControl extends M.Control {
         ani: null,
       });
       popup.addTab(featureTabOpts);
-      this.facadeMap_.addPopup(popup, coord);
+      this.facadeMap_.addPopup(popup, [parseFloat(coord[0]), parseFloat(coord[1])]);
     } else {
       popup.addTab(featureTabOpts);
     }
@@ -1215,8 +1215,8 @@ export default class ReferenceLocatorCatastroControl extends M.Control {
     features.forEach((feature) => {
       const attributes = [];
       const properties = feature.getAttributes();
-      properties.forEach((element, key) => {
-        attributes.push({ key, value: properties[key] });
+      Object.keys(properties).forEach((elem, key) => {
+        attributes.push({ elem, value: properties[elem] });
       });
       // Old code:
       // for (const key in properties) {
