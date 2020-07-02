@@ -1,0 +1,73 @@
+<div id="referencelocatorcatastro-id" class="m-control m-container m-referencelocatorcatastro-container">
+    <div class="header">
+        <!-- TITLE -->
+        <!--<div class="titleBusquedaCatastral">Búsqueda catastral</div>-->
+        <button id="m-referencelocatorcatastro-button" class="icon-navigation-busqueda-catastral" title="Búsqueda catastral"></button>
+        <button id="m-catastrogetinfo-button" class="g-cartografia-catastrogetinfo-button" title="Consultar datos catastrales"></button>
+        <button id="m-catastroclear-button" class="g-cartografia-papelera" title="Limpiar resultados"></button>
+    </div>
+    <div class="m-tabs-referencelocatorcatastro-container">
+        <ul id="m-tabs-referencelocatorcatastro" class="group">
+            <li><a class="activated">Referencia Catastral</a></li>
+            <li><a>Búsqueda por polígono y parcela</a></li>
+        </ul>
+        <div id="m-tabs-referencelocatorcatastro-content">
+            <!-- Parámetros de búsqueda -->
+            <div id="m-searchRC-container" class="m-searchRC-tab m-tabcontent-referencelocatorcatastro show">
+                <input type="text" id="m-searchRC-input" class="g-cartografia-searchRC-input" maxlength="20" placeholder="Introduzca los 14 ó 20 dígitos de la RC"></input>
+                <div id="button-rc" class="button">
+                    <button id="m-searchRC-button" class="search" title="Buscar">
+                        <i class="g-cartografia-zoom m-search-btn"></i>Buscar
+                    </button>
+                    <button id="m-clearRC-button" class="search" title="Limpiar Resultados">
+                        <i class="g-cartografia-papelera m-search-btn"></i>Limpiar
+                    </button>
+                </div>
+            </div>
+            <div id="m-searchParams-container" class="m-searchParams-tab m-tabcontent-referencelocatorcatastro">
+                <label id="m-searchParamsProvincia-label" class="g-cartografia-searchParamsProvincia-label">Provincia:</label>
+                <select id="m-searchParamsProvincia-select" name="Provincias" class="g-cartografia-searchParamsProvincia-select">
+                    <option value="0">Seleccione una provincia</option>
+                    <option value="04">ALMERÍA</option>
+                    <option value="11">CÁDIZ</option>
+                    <option value="14">CÓRDOBA</option>
+                    <option value="18">GRANADA</option>
+                    <option value="21">HUELVA</option>
+                    <option value="23">JAÉN</option>
+                    <option value="29">MÁLAGA</option>
+                    <option value="41">SEVILLA</option>
+                </select>
+                <br>
+                <label id="m-searchParamsMunicipio-label" class="g-cartografia-searchParamsMunicipio-label">Municipio:</label>
+                <select id="m-searchParamsMunicipio-select" name="Municipios" class="g-cartografia-searchParamsMunicipio-select">
+                    <option value="0">Seleccione un municipio</option>
+                </select>
+                <br>
+                <label id="m-searchParamsPoligono-label" class="g-cartografia-searchParamsPoligono-label">Polígono:</label>
+                <input type="text" id="m-searchParamsPoligono-input" class="g-cartografia-searchParamsPoligono-input" placeholder="Introduzca un polígono">
+                <br>
+                <label id="m-searchParamsParcela-label" class="g-cartografia-searchParamsParcela-label">Parcela:</label> <input type="text" id="m-searchParamsParcela-input" class="g-cartografia-searchParamsParcela-input" placeholder="Introduzca una parcela">
+                <div id="button-params" class="button">
+                    <button id="m-searchParams-button" class="search" title="Buscar">
+                        <i class="g-cartografia-zoom m-search-btn"></i>Buscar
+                    </button>
+
+                    <button id="m-clearParams-button" class="search" title="Limpiar Resultados">
+                        <i class="g-cartografia-papelera m-search-btn"></i>Limpiar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Resultados de búsqueda -->
+        <div id=m-referencelocatorcatastro-results>
+            <!-- results searchRC -->
+            <div id="m-searchRC-results" class="m-searchRC m-tabcontent-referencelocatorcatastro results-panel show">
+                <div id="m-searching-result-searchRC" class="m-searching-result g-cartografia-spinner"></div>
+            </div>
+            <!-- results searchParams -->
+            <div id="m-searchParams-results" class="m-searchParams m-tabcontent-referencelocatorcatastro results-panel">
+                <div id="m-searching-result-searchParams" class="m-searching-result g-cartografia-spinner"></div>
+            </div>
+        </div>
+    </div>
+</div>

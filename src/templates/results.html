@@ -1,0 +1,31 @@
+<div class="catastro-results-panels">
+    {{#if partial}}
+        <div class="partial">
+            <p>No se han encontrado resultados para la búsqueda.</p>
+        </div>
+    {{/if}}
+    <div class="results" id="m-catastro-results-scroll">
+        {{#each docs}}
+            <div id="{{rcId}}" class="result">
+                {{#each attributes}}
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="key">{{key}}</td>
+                                <td class="value{{#oneword value}} m-wordbreak{{/oneword}}">{{{value}}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
+    {{#eq docs.length 0}}
+        <div class="results">
+            <div class="partial">No se han encontrado resultados para la búsqueda "{{query}}".</div>
+        </div>
+    {{/eq}}
+    <div class="page" id="currentPage">
+        <span class="found" id="m-catastro-page-found">{{docs.length}}</span> de <span class="total">{{total}}</span>
+    </div>
+</div>

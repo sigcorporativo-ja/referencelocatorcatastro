@@ -1,0 +1,519 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?vz0qna');
+    src: url('../fonts/icomoon.eot?vz0qna#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?vz0qna') format('truetype'), url('../fonts/icomoon.woff?vz0qna') format('woff'), url('../fonts/icomoon.svg?vz0qna#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-navigation-"],
+[class*=" icon-navigation-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    padding: 8px;
+    font-size: 24px;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    opacity: .75;
+    -webkit-transition: opacity .25s ease 0s;
+    transition: opacity .25s ease 0s;
+    color: #404040;
+    margin: 0;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    opacity: 0.62 !important;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-navigation-busqueda-catastral:before {
+    content: "\e900";
+}
+
+div.m-control.activated button[class^="icon-navigation-"] {
+    content: "\e900";
+}
+
+.m-referencelocatorcatastro-container {
+    color: #404040;
+    /**width: 500px;**/
+}
+
+/*********************
+     SEARCH PANEL
+*********************/
+@media only screen and (max-width: 768px) {
+    .m-areas>div.m-area>div.m-panel.m-catastro.opened>button.m-panel-btn {
+        position: absolute;
+        right: -40px;
+        background-color: #fcaf3e;
+        color: #fff;
+        z-index: 999999;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 -1px 0 rgba(0, 0, 0, .02);
+    }
+}
+
+/****************************
+     FIREFOX HACKS
+****************************/
+@-moz-document url-prefix() {
+    div.m-catastro div.m-panel-controls {
+        display: flex !important;
+    }
+
+    div.m-referencelocatorcatastro-container.shown {
+        display: initial !important;
+    }
+}
+
+/****************************
+ INTERNET EXPLORER HACKS
+****************************/
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    div.search-panel>input.m-input-search {
+        width: 75% !important;
+    }
+
+    div.search-panel>input.m-input-search::-ms-clear {
+        display: none;
+    }
+
+    div#m-searching-result-searchRC,
+    div#m-searching-result-searchParams {
+        padding-left: 44%;
+    }
+
+    div.m-control.m-referencelocatorcatastro-container.shown {
+        display: block !important;
+    }
+}
+
+/***************
+       PANEL
+***************/
+.m-areas>div.m-area>div.m-panel.m-catastro {
+    order: -100;
+    border-top-right-radius: 20px;
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro.opened {
+    border-top-left-radius: 20px;
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro.collapsed {
+    order: -100;
+    border-top-right-radius: 20px;
+    height: 40px;
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro>button.m-panel-btn {
+    position: absolute;
+    right: -40px;
+    color: #fff;
+    z-index: 999999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro.opened>button.m-panel-btn {
+    position: absolute;
+    right: -40px;
+    background-color: #fcaf3e;
+    color: #fff;
+    z-index: 999999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 -1px 0 rgba(0, 0, 0, .02);
+}
+
+.g-catastropanel-button-closed:before {
+    content: "\1F3D8" !important;
+    font-size: 24px;
+    top: -4px !important;
+    color: #fcaf3e;
+    position: relative;
+    top: -2px;
+}
+
+.g-catastropanel-button-opened:before {
+    content: "\e91d" !important;
+    font-size: 15px;
+    color: white;
+    transition: opacity .25s ease 0s, color .25s ease 0s;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-family: g-cartografia !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+
+.m-catastrogetinfo-container {
+    top: 0;
+    order: 2;
+}
+
+.m-referencelocatorcatastro-container>div.header {
+    line-height: 40px;
+    /*text-align: center;*/
+    height: 39px;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    font-size: 15px;
+    /*cursor: grab;*/
+}
+
+.titleBusquedaCatastral {
+    padding-right: 140px;
+    margin-left: 235px;
+    font-size: 15px;
+    float: left;
+}
+
+.g-cartografia-catastrogetinfo-button:before {
+    content: "\1F4CD" !important;
+    top: -2px;
+    position: relative;
+}
+
+.g-cartografia-catastroclear-button:before {
+    content: "\2716" !important;
+    position: relative;
+}
+
+.g-cartografia-catastrogetinfo-button.activated:before {
+    content: "\1F4CD" !important;
+    top: -2px;
+    position: relative;
+    color: blue;
+}
+
+.icon-navigation-busqueda-catastral.activated:before {
+    content: "\e900" !important;
+    /*top: -2px;*/
+    position: relative;
+    color: blue;
+}
+
+/* ANIMATIONS */
+#m-catastroclear-button:hover {
+    color: red
+}
+
+#m-catastrogetinfo-button:hover {
+    color: black
+}
+
+#m-referencelocatorcatastro-button:hover {
+    color: black
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro>div.m-panel-controls {
+    /*-webkit-transition: max-width .5s ease 0s, opacity .44s ease 0s;
+	transition: max-width .5s ease 0s, opacity .44s ease 0s;
+	background: white;
+	height: 100%;
+	border-bottom-width: medium;
+	border-radius: 8px;
+	border-top-right-radius: 0px;
+	border-color: #ccc;
+	border-bottom-style: inset;*/
+}
+
+.m-areas>div.m-area>div.m-panel.m-catastro.opened {
+    border-radius: 1px;
+    border-top-right-radius: 0px;
+}
+
+/*******************************
+       TABS referencelocatorcatastro
+*******************************/
+.m-tabs-referencelocatorcatastro-container {
+    display: inline;
+}
+
+.shown .m-tabs-referencelocatorcatastro-container {
+    display: inline;
+}
+
+@media only screen and (min-width: 769px) {
+    .collapsed .m-tabs-referencelocatorcatastro-container {
+        display: none;
+    }
+}
+
+#m-tabs-referencelocatorcatastro {
+    list-style: none;
+    overflow: hidden;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+}
+
+#m-tabs-referencelocatorcatastro li {
+    display: inline;
+    width: 40%;
+    margin: 0 8% 0 2%;
+}
+
+#m-tabs-referencelocatorcatastro li:first-child {
+    margin: 0 2% 0 8%;
+}
+
+#m-tabs-referencelocatorcatastro li a {
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    float: left;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #6C6C6C;
+}
+
+#m-tabs-referencelocatorcatastro li a.activated {
+    background-color: white;
+    border-bottom: solid 1px white;
+    z-index: 1;
+    font-weight: bold;
+}
+
+#m-tabs-referencelocatorcatastro li a:hover {
+    background-color: rgba(124, 0, 158, 0.05);
+    cursor: pointer;
+}
+
+#m-tabs-referencelocatorcatastro-content {
+    /*height: 250px;
+    overflow: hidden;*/
+    min-height: 50px;
+    max-height: 75vh;
+    border: 1px solid #ccc;
+    position: relative;
+    top: -1px;
+    width: 94%;
+    margin-left: 3%;
+    z-index: 0;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+#m-tabs-referencelocatorcatastro-content>div {
+    display: none;
+}
+
+#m-tabs-referencelocatorcatastro-content>div.show {
+    display: block;
+    height: 250px;
+    width: 400px;
+}
+
+#m-tabs-referencelocatorcatastro-content {
+    min-height: 50px;
+    display: none;
+    overflow: auto;
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.g-cartografia-searchRC-input {
+    width: 80%;
+    margin-left: 25px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    height: 40px;
+}
+
+#referencelocatorcatastro-id {
+    border-width: 40px;
+    position: relative;
+}
+
+#m-tabs-referencelocatorcatastro-content>div>div.button {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    display: table;
+    background-color: #eaeaea;
+    position: absolute;
+    bottom: 0;
+}
+
+#button-rc {
+    margin-top: 94px !important;
+}
+
+#m-tabs-referencelocatorcatastro-content>div>div.button>button.search {
+    background-color: #fff;
+    padding-left: 5px;
+    cursor: pointer;
+    font-family: Muli, sans-serif !important;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .4);
+    font-size: 15px;
+    line-height: 40px;
+    opacity: .75;
+    -webkit-transition: opacity .25s ease 0s;
+    transition: opacity .25s ease 0s;
+    color: #404040;
+    width: 35%;
+    margin: 10px 5%;
+}
+
+#m-searchParams-container>input {
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+}
+
+#m-searchParams-container>select {
+    height: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #6c6c6c;
+    font-family: Muli, sans-serif !important;
+}
+
+#m-searchParams-container>select.g-cartografia-searchParamsProvincia-select {
+    width: 50%;
+    margin-left: 4.8% !important;
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
+}
+
+#m-searchParams-container>select.g-cartografia-searchParamsMunicipio-select {
+    width: 50%;
+    margin-left: 4% !important;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+}
+
+#m-searchParams-container>input.g-cartografia-searchParamsPoligono-input {
+    width: 48%;
+    margin-left: 5.1% !important;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+}
+
+#m-searchParams-container>input.g-cartografia-searchParamsParcela-input {
+    width: 48%;
+    margin-left: 6.3% !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+
+#m-searchParams-container>label {
+    margin-left: 20px !important;
+    width: 75%;
+    color: #2e3436;
+    font-family: Muli, sans-serif !important;
+    font-size: 13px;
+}
+
+#m-searchParams-container>label.g-cartografia-searchParamsProvincia-label {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+#m-referencelocatorcatastro-results>div {
+    display: none;
+    background-color: white;
+    width: 400px;
+}
+
+#m-referencelocatorcatastro-results>div.show {
+    display: block;
+    padding-left: 3%;
+    padding-bottom: 2%;
+}
+
+#currentPage {
+    text-align: center;
+    margin-top: 3%;
+    font-weight: bold;
+}
+
+.catastro-results-panel.catastro-results-hidden>div.results {
+    margin: 0px;
+    max-height: 0;
+}
+
+.catastro-results-panel>div.results {
+    margin: 0px;
+    max-height: 32vh !important;
+    overflow: auto !important;
+}
+
+.m-searching-result {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.catastro-results-panel>div.page {
+    font-size: 50px;
+}
+
+.m-searching-result:before {
+    margin: 0 auto;
+    -webkit-animation: mloading 1s linear infinite;
+    -moz-animation: mloading 1s linear infinite;
+    animation: mloading 1s linear infinite;
+}
+
+.m-referencelocatorcatastro-container:not(.m-searching) div.m-searching-result {
+    display: none;
+}
+
+.catastro-results-panel>div.results>div.result {
+    cursor: pointer;
+    padding: 20px;
+    /*-webkit-transition: box-shadow 0.3s ease 0s, background 0.3s ease 0s, transform 0.05s ease 0s;
+   transition: box-shadow 0.3s ease 0s, background 0.3s ease 0s, transform 0.05s ease 0s;*/
+    margin: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.catastro-results-panel>div.results>div.result:hover {
+    background-color: #eeeeec;
+    box-sizing: border-box;
+}
+
+.catastro-results-panel>div.page {
+    margin-top: 0px;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
