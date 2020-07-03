@@ -16,10 +16,6 @@ Plugin que permite la localización de parcelas mediante la introducción de la 
  <script type="text/javascript" src="../../plugins/referencelocatorcatastro/referencelocatorcatastro.ol.min.js"></script>
 ```
 
-## Eventos
-
-## Otros métodos
-
 ## Ejemplos de uso
 
 ### Ejemplo 1

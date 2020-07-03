@@ -16,7 +16,7 @@ export default class ReferenceLocatorCatastro extends M.Plugin {
    * @param {Object} impl implementation object
    * @api stable
    */
-  constructor(userParameters) {
+  constructor(userParameters = {}) {
     if (M.utils.isNullOrEmpty(userParameters)) {
       M.exception('No ha especificado ningún parámetro.');
     }
