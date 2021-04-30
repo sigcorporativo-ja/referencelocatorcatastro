@@ -56,12 +56,13 @@
     "name": "ReferenceLocatorCatastro",
     "description": "Búsqueda catastral",
     "text": "Búsqueda catastral mediante referencia catastral o polígono y parcela",
-    "version": "1.1.0",
-    "date": "Junio, 2020",
+    "version": "1.1.1",
+    "date": "Abril, 2021",
     "author": "",
     "org": "Consejería de Medioambiente y Ordenación del Territorio de la Junta de Andalucía",
     "tags": "mapea,plugin",
     "icon": "./facade/assets/icons/icons.svg",
-    "centralized": true
+    "centralized": true,
+    "compatibility":["5","6"]
   }
 }
